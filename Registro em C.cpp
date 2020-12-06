@@ -1,29 +1,27 @@
-#include <stdio.h> // biblioteca padrÃ£o de entrada e saida
-#include <locale.h> // vai ser usada para conseguir colocar acentos nas palavras
+#include <stdio.h> // biblioteca padrao de entrada e saida
+#include <unistd.h> // biblioteca para sleep
 #include <string.h> // usada para controlar as strings
-
+#include <stdlib.h> // clear
 int main (){
-setlocale  ( LC_ALL ,  "Portuguese_Brazil" ); // Escrever palavras conforme a lÃ­ngua portuguesa
+
     
 int i,j,a,pesq,mud, del;  
 char input,x[100],opc;
 struct agenda_cadastro 
 {
-    
-   
     char nomes[100], enderecos[100],aux[100];
     int idades, telefones;
 };
 
 struct agenda_cadastro pessoas[5]; // cadastro de 5 pessoas
 
-while (input != 'e'){ // enquanto a variÃ¡vel input for diferente de 'e' (que determinei para saÃ­da do cÃ³digo) o programa continuarÃ¡ funcionando
+while (input != 'e'){ // enquanto a variavel input for diferente de 'e' (que determinei para saida do codigo) o programa continua funcionando
 
-// ExibiÃ§Ã£o das opÃ§Ãµes
-printf ("..........MENU DA AGENDA..........");
-printf ("Cadastro - a\n Pesquisa de registro por idade - b\n ClassificaÃ§Ã£o alfabetica - c\n AlteraÃ§Ã£o de registro digitado com erro - d\n Sair do Menu - e\n");
+//Exibicao das opcoes
+printf ("..........MENU DA AGENDA..........\n");
+printf ("\n Cadastro - a\n Pesquisa de registro por idade - b\n Classificacao alfabetica - c\n Alteracao de registro digitado com erro - d\n Sair do Menu - e\n");
 printf ("Digite a letra correspondente a opcao desejada");
-scanf (" %c", &input); // Ã© importante deixar o espaÃ§o depois das aspas, caso o contrÃ¡rio apareÃ§a duplicaÃ§Ã£o
+scanf (" %c", &input); // e importante deixar o espaco depois das aspas, caso contrario vai exibir duplicado
 
 
 //CASES 
@@ -32,13 +30,13 @@ switch (input)
     case 'a': // case do cadastro
     {
         for (i=0;i<5;++i){
-                            printf ("\n-------- Agenda de Cadastro -------- ");
+                            printf ("\n-------- Agenda de Cadastro -------- \n");
                             printf ("Nome da pessoa:..........");
                             fflush (stdin);
                             fgets (pessoas[i].nomes, 100, stdin);
-                            strcpy (pessoas[i].aux, pessoas[i].nomes); // Copiei a string nome na aux porque na  ordenaÃ§Ã£o em ordem alfabetica elas vÃ£o perder a definiÃ§Ã£o na ordem certa do registro
+                            strcpy (pessoas[i].aux, pessoas[i].nomes); // Copiei a string nome na aux porque na  ordenacao em ordem alfabetica elas vao perder a definicao  na ordem certa do registro
                             
-                            printf ("Endereï¿½o:.........."); 
+                            printf ("Endereco:.........."); 
                             fflush (stdin);
                             fgets (pessoas[i].enderecos, 100, stdin); 
     
@@ -49,6 +47,8 @@ switch (input)
                             printf ("Telefone:..........");
                             fflush (stdin);
                             scanf ("%d", &pessoas[i].telefones); 
+                            sleep (1);
+                            system ("cls"); // Usa-se cls para windows e clear para linux
         }                                                           
         break;
                              // Pesquisa de idade  
@@ -73,12 +73,17 @@ switch (input)
                                     }while (i<=4 && a==0);
                                     if (a == 1){
                                         printf ("Idade encontrada no nome: %d, correspondendo a %s\n", i++, pessoas[i].nomes);
+                                        sleep (1);
+                                        system ("cls");
                                     }else 
-                                    	printf ("Idade nÃ£o localizada nos nomes\n");
+                                    	printf ("Idade nao localizada nos nomes\n");
+                                        sleep (3);
+                                        system ("cls");
+
                             }
 
                             break;
-                                                                         // classificaÃ§Ã£o alfabetica 
+                                                                         // classificacao alfabetica 
                                                                             case 'c':
                                                                             {
                                                                                 for (i=0;i<=3;i=i+1){
@@ -95,24 +100,25 @@ switch (input)
                                                                                 for (i=0;i<5;++i) {
                                                                                 printf ("%s",pessoas[i].nomes);
                                                                                 }
-                                                                            
+                                                                                sleep (3);
+                                                                                system ("cls");
                                                                             break;}
-                                                                                                         // alteraÃ§Ã£o de registro
+                                                                                                         // alteracao de registro
                                                                                                              case 'd':
                                                                                                              {
-                                                                                                                 printf ("VocÃª deseja alterar ou deletar?\n Para alterar digite 'A'\n Para deletar digite 'D' ");
+                                                                                                                 printf ("\nVoce deseja alterar ou deletar?\n Para alterar digite 'A'\n Para deletar digite 'D' ");
                                                                                                                  scanf (" %c", &opc);
                                                                                                                     if (opc == 'A') {
                                                                                                                  
                                                                                                                  for (i=0;i<5;i++){
                                                                                                                      printf ("\n-------Registro %d---------\n", i);
-                                                                                                                     printf ("Nome: %c", pessoas[i].aux);
+                                                                                                                     printf ("Nome: %s", pessoas[i].aux);
                                                                                                                      
                                                                                                                  }
-                                                                                                                 printf ("NÃºmero do registro que deseja alterar");
+                                                                                                                 printf ("Numero do registro que deseja alterar");
                                                                                                                  scanf ("%d", &i);
                                                                                                                  printf ("O que deseja alterar nesse registro?\n");
-                                                                                                                 printf ("1- nome, 2 - idade, 3 - endereÃ§o, 4 - telefone");
+                                                                                                                 printf ("1- nome, 2 - idade, 3 - endereco, 4 - telefone");
                                                                                                                  scanf ("%d", &mud);
                                                                                                                  switch (mud)
                                                                                                                  {
@@ -146,7 +152,7 @@ switch (input)
                                                                                                                          printf ("\n Alterado com sucesso");
                                                                                                                      }
                                                                                                                      break;
-                                                                                                                     default: ("NÃºmero invÃ¡lido!");
+                                                                                                                     default: ("Numero invalido!");
                                                                                                                  }
                                                                                                              }
                                                                                                                    else if (opc == 'D')
@@ -155,11 +161,11 @@ switch (input)
                                                                                                                         printf ("\n-------Registro %d---------\n", i);
                                                                                                                         printf ("Nome: %c", pessoas[i].aux);
                                                                                                                        }
-                                                                                                                       printf ("NÃºmero do registro que deseja apagar");
+                                                                                                                       printf ("Numero do registro que deseja apagar");
                                                                                                                        scanf ("%d", &i);
-                                                                                                                       printf ("Qual informaÃ§Ã£o do registro deseja apagar?\n  ");
+                                                                                                                       printf ("Qual informacao do registro deseja apagar?\n  ");
                                                                                                                        printf ("1- Nome\n 2 - EndereÃ§o\n  3 - Idade\n 4 - Telefone");
-                                                                                                                       printf ("Digite o nÃºmero correspondente: ");
+                                                                                                                       printf ("Digite o numero correspondente: ");
                                                                                                                        scanf ("%d", &del);
                                                                                                                        switch (del)
                                                                                                                        {
@@ -190,11 +196,11 @@ switch (input)
                                                                                                                        break;
 
                                                                                                                        default: 
-                                                                                                                       printf ("NÃºmero invÃ¡lido!");
+                                                                                                                       printf ("Numero invÃ¡lido!");
                                                                                                                        }
                                                                                                                     
                                                                                                                    }else {
-                                                                                                                       printf ("Letra invÃ¡lida!");
+                                                                                                                       printf ("Letra invalida!");
                                                                                                                    }}
                                                                                                              break;
 
@@ -205,10 +211,9 @@ switch (input)
                                                                                             }  
                                                                                              break;   
                                                                                             default: 
-                                                                                            printf ("-----------LETRA INVÃLIDA!-----------\n"); }                 
+                                                                                            printf ("-----------LETRA INVALIDA!-----------\n"); }                 
 } // final de todos os cases
 } // final do while
 return 0;
 }
 
-/* Muitas variaveis, da para diminuir*/
