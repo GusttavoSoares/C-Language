@@ -196,7 +196,7 @@ switch (input)
                                                                                                                        break;
 
                                                                                                                        default: 
-                                                                                                                       printf ("Numero invÃ¡lido!");
+                                                                                                                       printf ("Numero invalido!");
                                                                                                                        }
                                                                                                                     
                                                                                                                    }else {
