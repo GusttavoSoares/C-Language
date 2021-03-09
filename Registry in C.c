@@ -1,3 +1,5 @@
+//First program, registry in C
+
 #include <stdio.h> // biblioteca padrao de entrada e saida
 #include <unistd.h> // biblioteca para sleep
 #include <string.h> // usada para controlar as strings
