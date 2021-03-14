@@ -1,4 +1,4 @@
-# Linguagem-C
+
 <h1 align="center">List with activities solved in C </h1>
   
   
