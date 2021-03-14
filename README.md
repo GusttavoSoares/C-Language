@@ -4,7 +4,7 @@
   
 ### About the project 💻
 <p align="center">A list of several programs made in C, in each code it is written what to do, and the better, all the activities is solved! </p>
- ---
+
  <p align="center">
  <a href="#About the project">About</a> •
  <a href="#Technologies">Technologies</a> • 
