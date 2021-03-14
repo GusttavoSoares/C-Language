@@ -15,9 +15,9 @@
 Gustavo Santos Costa Soares 🖐️
 
 
-[Link](https://github.com/Poitt/Linguagem-C/blob/adding-files/List%20with%20all%20exercises%20-%20C.pdf) to access the list with the description of each exercise.
+[Link](https://github.com/Poitt/C-Language/blob/main/List%20with%20all%20exercises%20-%20C.pdf) to access the list with the description of each exercise.
 <br/><br/>
-[Link](https://github.com/Poitt/C-Language/tree/adding-files/Files) to access the exercises. 
+[Link](https://github.com/Poitt/C-Language/tree/main/Files) to access the exercises. 
 
 
 Good studies 📒
