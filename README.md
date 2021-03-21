@@ -3,12 +3,13 @@
   
   
 ### About the project 💻
-<p align="center">A list of several programs made in C, in each code it is written what to do, and the better, all the activities is solved! Use to put into practice what you have learned about the C language, there are exercises with conditions, loops, arrays, pointers, function and and examples about libraries. </p>
+<p align="center">A list of several programs made in C, in each code it is written what to do, and the better, all the activities is solved! Use to put into practice what you have learned about the C language, there are exercises with conditions, loops, arrays, pointers, function and  examples about libraries. </p>
 
 ### Technologies:
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Dev-C++](https://sourceforge.net/projects/orwelldevcpp/)
+
 
 
 ### Author
